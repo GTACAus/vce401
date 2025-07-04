@@ -321,7 +321,7 @@ table .image-container img {
          <!-- Add this where you want the dropdowns and table to appear -->
 <div id="test-section" style="margin: 2em 0;">
   <label>
-    1. Shape:
+    Test 1:
     <select id="shape-select">
       <option value="">Select...</option>
       <option>Bacilli</option>
@@ -331,7 +331,7 @@ table .image-container img {
   </label>
   <br><br>
   <label>
-    2. Test 1:
+    Test 2:
     <select id="test1-select">
       <option value="">Select...</option>
       <option>Gram negative</option>
@@ -340,7 +340,7 @@ table .image-container img {
   </label>
   <br><br>
   <label>
-    3. Test 2:
+    Test 3:
     <select id="test2-select">
       <option value="">Select...</option>
       <option>Catalase test</option>
@@ -349,10 +349,11 @@ table .image-container img {
   </label>
   <br><br>
   <label>
-    4. Test 3:
+    Test 4:
     <select id="test3-select">
       <option value="">Select...</option>
       <option>Beta-Haemolysis test</option>
+      <option>Coagulase test</option>
       <option>Growth on MAC</option>
       <option>Oxidase test</option>
       <option>Spore Test</option>
@@ -360,12 +361,12 @@ table .image-container img {
   </label>
   <br><br>
   <label>
-    5. Test 4:
+    Test 5:
     <select id="test4-select" onchange="showTestTable()">
       <option value="">Select...</option>
       <option>Beta-Haemolysis test</option>
-      <option>Coagulase test</option>
-      <option>Growth</option>
+      <option>Blood test</option>
+      <option>Growth on MAC test</option>
       <option>Motility test</option>
       <option>Oxidase Test</option>
       <option>Urea test</option>
@@ -376,6 +377,19 @@ table .image-container img {
 </div>
 
 <script>
+  function showShapeImage() {
+  const val = document.getElementById('shape-select').value;
+  const container = document.getElementById('shape-image-container');
+  if (val === "Bacilli") {
+    container.innerHTML = `<img src="bacilli.png" alt="Bacilli" style="max-width:200px;">`;
+  } else if (val === "Cocci") {
+    container.innerHTML = `<img src="cocci.png" alt="Cocci" style="max-width:200px;">`;
+  } else if (val === "Spirilla") {
+    container.innerHTML = `<img src="spirilla.png" alt="Spirilla" style="max-width:200px;">`;
+  } else {
+    container.innerHTML = "";
+  }
+}
 function showTestTable() {
   const val = document.getElementById('test4-select').value;
   const container = document.getElementById('test-table-container');
