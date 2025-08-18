@@ -226,7 +226,7 @@ Success criteria: </p>
 </p>
 <h3 style="text-align: center; font-weight: bold;">Take a photo of your completed ELISA model</h3>
       <label class="custom-upload-btn">
-        Upload image of ELISA model here
+        Upload images of your ELISA model at each of the three stages here
         <input type="file" accept="image/*" onchange="addUploadedImage(event, 'imageContainer2')" style="display:none;" />
       </label>
       <div id="imageContainer2" class="image-container"></div>
@@ -782,7 +782,7 @@ function showTest2Table() {
         const container = document.getElementById(containerId);
         if (container) {
           // Only clear if it is NOT container 3
-          if (containerId !== "imageContainer3") {
+          if (containerId !== "imageContainer2") {
             container.innerHTML = "";
           }
 
